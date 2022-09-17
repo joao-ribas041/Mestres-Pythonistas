@@ -62,4 +62,4 @@ print((not possui_passaporte or passagem_comprada) and not menor_de_idade)
 print('\nUma pessoa não pode viajar se não possuir passaporte ou não tiver a passagem comprada e for menor de idade')
 print((not possui_passaporte or not passagem_comprada) and menor_de_idade)
 
-print('')
+print((possui_passaporte or not passagem_comprada) and not menor_de_idade)
