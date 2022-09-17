@@ -14,3 +14,5 @@ print(True == True)
 print('Rafael' == 'rafael')
 print('b' > 'a')
 print(5 == '5')  # Falso (int == str)
+
+print(not 5 == '5')
