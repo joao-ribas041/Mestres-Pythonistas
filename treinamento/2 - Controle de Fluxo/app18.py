@@ -1,3 +1,4 @@
 # Conversao de tipos
 idade = input('Qual é a sua idade? ')
-print(idade > 18)
+print(int(idade) > 18)
+print(type(str(5)))
