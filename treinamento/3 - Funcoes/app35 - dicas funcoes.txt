@@ -1,0 +1,4 @@
+1 - Dê nomes significativos para as funções
+2 - Fuções pequenas que fazem apenas uma coisa
+3 - Quanto menor a quantidade de argumentos, melhor
+4 - Use funções para organizar seu código e economizar linhas de código (DRY (Don't Repeat Yourself))
