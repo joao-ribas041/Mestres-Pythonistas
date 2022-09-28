@@ -1,0 +1,11 @@
+Banana
+Maça
+Abacate
+Morango
+Uva
+
+Vermelho
+Azul
+Preto
+Verde
+Amarelo
