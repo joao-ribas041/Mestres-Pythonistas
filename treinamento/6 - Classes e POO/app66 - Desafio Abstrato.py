@@ -3,10 +3,10 @@ from abc import ABC, abstractmethod
 class Monitor(ABC):
     @abstractmethod
     def AumentarClaridade(self, brilho):
-        print(f'Brilho aumentado para {brilho}')
+        pass
     
     def ReduzirClaridade(self, brilho):
-        print(f'Brilho diminuido para {brilho}')
+        pass
 
 class MonitorFullHD(Monitor):
     def AumentarClaridade(self, brilho):
