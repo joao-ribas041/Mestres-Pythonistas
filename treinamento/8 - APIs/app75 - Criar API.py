@@ -51,9 +51,17 @@ postagens = [
 def obter_postagens():
     return jsonify(postagens)
 
-# Rota - GET c/id https://localhost:5000/postagens/1
-@app.route('/postagens',methods=['GET'])
+# Obter postagem por id - GET c/id http://localhost:5000/postagens/1
+@app.route('/postagens/<int:indice>',methods=['GET'])
 def obter_postagens_por_id(indice):
     return jsonify(postagens[indice], 200)
+
+# Criar uma nova postagem - POST
+@app.route('/postagens',methods=['POST'])
+def nova_postagem():
+    postagem = request.get_json()
+    postagens.append(postagem)
+    
+    return jsonify(postagem, 200)
 
 app.run(port=5000,host='localhost',debug=True)
