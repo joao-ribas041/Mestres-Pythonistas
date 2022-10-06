@@ -56,19 +56,31 @@ def obter_postagens():
 def obter_postagens_por_id(indice):
     return jsonify(postagens[indice], 200)
 
-# Criar uma nova postagem - POST
+# Criar uma nova postagem - POST http://localhost:5000/postagens
 @app.route('/postagens',methods=['POST'])
 def nova_postagem():
     postagem = request.get_json()
     postagens.append(postagem)
     return jsonify(postagem, 200)
 
-# Alterar uma postagem inexistente - PUT
+# Alterar uma postagem inexistente - PUT http://localhost:5000/postagens/1
 @app.route('/postagens/<int:indice>',methods=['PUT'])
 def alterar_postagem(indice):
     postagem_alterada = request.get_json()
     postagens[indice].update(postagem_alterada)
     return jsonify(postagens[indice],200)
+
+# Excluir uma postagem - DELETE
+@app.route('/postagens/<int:indice>', methods=['DELETE'])
+def excluir_postagem(indice):
+    try:
+        if postagens[indice] is not None:
+            del postagens[indice]
+            return jsonify(f'Foi excluído a postagem {postagens[indice]}', 200)
+    except:
+        return jsonify('Não foi possível encontrar a postagem para exclusão', 404)
+        
+
 
 
 app.run(port=5000,host='localhost',debug=True)
