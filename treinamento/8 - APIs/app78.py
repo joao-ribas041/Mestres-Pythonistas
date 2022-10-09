@@ -3,12 +3,12 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 # Criar uma API flask
-app = Flask(__name__)
-
-
-# Criar uma instância de SQLAlchemy
-app.config['SECRET_KEY'] = 'FSD24323f$@!s@'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+def app_init():
+    app = Flask(__name__)
+    # Criar uma instância de SQLAlchemy
+    app.config['SECRET_KEY'] = 'FSD24323f$@!s@'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+    app.app_context()
 
 db = SQLAlchemy(app)
 db:SQLAlchemy
