@@ -1,28 +1,27 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-# Criar uma API flask
-def criar_app():
-    app = Flask(__name__)
-    # Criar uma instância de SQLAlchemy
-    app.config['SECRET_KEY'] = 'FSD24323f$@!s@'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
-
-    with app.app_context():
-        db = banco_de_dados(app)
-        db.drop_all()
-        db.create_all()
-    return db
 
 # Executar o comando para criar o banco de dados
-db = criar_app()
-
 def banco_de_dados(app):
     db = SQLAlchemy(app)
     db:SQLAlchemy
+    return db
+    
+# Criar uma API flask
+app = Flask(__name__)
+# Criar uma instância de SQLAlchemy
+app.config['SECRET_KEY'] = 'FSD24323f$@!s@'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 
-    # Definir a estrutura da tabela Postagem
-    # id_postagem, titulo, autor
+with app.app_context():
+    db = banco_de_dados(app)
+    db.drop_all()
+    db.create_all()
+
+# Definir a estrutura da tabela Postagem
+# id_postagem, titulo, autor
+
 class Postagem(db.Model):
     __tablename__ = 'postagem'
     id_postagem = db.Column(db.Integer, primary_key=True)
@@ -38,17 +37,10 @@ class Autor(db.Model):
     email = db.Column(db.String)
     senha = db.Column(db.String)
     admin = db.Column(db.Boolean)
-    postagens = db.relationship('postagem')
+    postagens = db.relationship('Postagem')
     
-
-
-autor = Autor(nome='João',email='João@gmail.com',senha='123',admin=True) 
-db.session.add(autor)
-db.session.commit()
-
-
-
-# Criar usuários administradores
-#autor = Autor(nome='Joao',email='joao@gmail.com',senha='123456',admin=True)
-#db.session.add(autor)
-#db.session.commit() """
+with app.app_context():
+    # Criar usuários administradores
+    autor = Autor(nome='João',email='João@gmail.com',senha='123',admin=True) 
+    db.session.add(autor)
+    db.session.commit()
