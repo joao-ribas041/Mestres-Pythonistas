@@ -63,7 +63,7 @@ def obter_autor_por_id(id_autor):
     autor_atual['nome'] = autor.nome
     autor_atual['email'] = autor.email
     
-    return jsonify(f'Você buscou pelo autor: {autor_atual}')
+    return jsonify({'autor': autor_atual})
     
 
 @app.route('/autores',methods=['POST'])
