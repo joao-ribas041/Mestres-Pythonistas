@@ -35,10 +35,11 @@
 #     sorteio2: 'rafael',
 #     sorteio3: 'marcus',
 # }
-
+from pprint import pprint
+import random
 sorteios = ['sorteio1','sorteio2','sorteio3']
 participantes = ['joel','jessica', 'maria','cris','Larissa', 'rafael', 'marcus', 'john']
-{sorteio: [participante for participante in participantes] for sorteio in sorteios}
+pprint({sorteio: random.choice(participantes) for sorteio in sorteios})
 
 
 # # Desafio 5 
@@ -55,3 +56,6 @@ participantes = ['joel','jessica', 'maria','cris','Larissa', 'rafael', 'marcus',
 #  'grupo 2': [81, 24, 22, 46, 52],
 #  'grupo 3': [5, 35, 6, 86, 37]
 # }
+
+grupos = ['grupo 1', 'grupo 2', 'grupo 3']
+pprint({grupo: [random.randint(1,101) for i in range(5)] for grupo in grupos})
