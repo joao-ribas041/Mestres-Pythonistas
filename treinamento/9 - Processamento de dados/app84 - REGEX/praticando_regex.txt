@@ -1,0 +1,138 @@
+Olá :), sou uma frase simples
+
+dev123com
+developer 123
+dev = 123
+dev = 1234
+dev = 1337
+dev = 9000
+
+asd.
+112.
+1@#.
+12.234
+
+18.335.346
+23.235.756
+56.863.623
+
+# Agora quero todas as palavras com 3 caracteres no total, que
+iniciam tanto com o ou a , tanto faz o caracter do meio, e 
+finalizam com a letra a
+
+opa
+outra
+ata
+ola
+tola
+puxar
+
+Vamos imaginar em um caso de um número de celular, ou qualquer outro padrão onde você quer confirmar uma combinação válida, com o número a seguir:
+(23)99255-1231
+[(]\d\d[)]\d\d\d\d\d[-]\d\d\d\d
+
+E o número a seguir? Caso você não saiba, o número 55 abaixo,
+representa o número identificador do pais. E neste caso 55
+representa o número identificador do Brasil. E vamos pensar agora
+que o seu programa estará apenas cadastrando clientes nacionais.
+Então só será aceito números iniciando com 55, além de estar 
+dentro de um padrão número válido. como poderíamos fazer isso?
+55(23)99200-8755
+45(23)99200-8755
+33(23)99200-8755
+
+[5][5][(]\d\d[)]\d\d\d\d\d[-]\d\d\d\d
+
+hey encontrar
+tey encontrar
+vei encontrar
+way pular
+
+[^letra]
+
+(55)1234-1235 encontrar
+(62)1234-1235 encontrar
+(47)1234-1235 pular
+(89)1234-1235 pular
+
+# Em alguns casos você terá que validar valores dentro de uma
+faixa, mas para evitar de digitar eles todos individualmente
+
+# Quero todos numeros de 5 a 9
+123456789
+
+[5-9]
+
+# quero todas letras entre t a z
+abcdefghihklmnopqrstuvwxyz
+
+
+# Uma sacada legal para casos onde você estará recebendo apenas
+para receber letras e números(que não contém acentos latinos) é o
+uso do \w que representa todas letras de a a z em maiúscolo ou 
+minúsculo e também todos os números de 1 a 0
+
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789#$¨&
+#@&çóíúá
+
+Encontrando repetições de um padrão mais rapidamente
+45-8888-88888
+45-5555-88888
+
+# Vamos imaginar que estamos criando um filtro de gírias
+aceitáveis dentro da nossa aplicação. Sendo que as únicas
+combinações aceitáveis seriam: 'zoeira', 'zueira', 'zuera'. ou
+seja, apenas quando a palavra é iniciada com uma das 3 possíveis 
+combinações de 3 primeiras letras: zoe, zue
+
+zoeira encontrar
+zueira encontrar
+zuera encontrar
+suera pular
+
+[zueo]{3}
+
+
+
+# Outra situação onde você simplesmente quer validar que uma 
+quantidade específica de caracteres sejam usados em suas
+aplicações você poderia combinar o poder de generalismo do . com
+o poder das repetição que as chaves te passam.
+
+# Vamos imaginar que uma senha precisa ter no mínimo 8 caracteres,
+independente dos caracteres que foram digitados dentro do campo
+
+12314567
+asdfgdfh
+*&@%$&$%
+G4D%&264
+çéç$¨#$#
+asdasd
+asdasd
+123
+
+.{8}
+
+# uma ou mais repetições
+
+# Para todos caracteres e metacaracteres, podemos usar + para
+encontrar combinações somente quando houver, nó minímo uma ou 
+mais ocorreências. Exemplo:
+deev encontrar
+ddev encontrar
+dddeva encontrar
+devi encontrar
+eve pular
+
+# Podemos também encontrar combinações onde é iniciado de alguma
+forma e o restante pode ser qualquer combinação de caractere
+usando o .*
+
+devi encontrar
+devo encontrar
+devu encontrar
+deva encontrar
+devi olhar
+
+
+# Em 
