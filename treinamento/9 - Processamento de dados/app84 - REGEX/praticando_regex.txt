@@ -135,4 +135,68 @@ deva encontrar
 devi olhar
 
 
-# Em 
+# Em alguns casos, você estará lidando com caracteres opcionais,
+que podem ser encontrados através do metacaracter ?(interrogação)
+que representa que um caracter é opcional. Ele te permite 
+representar tanto zera ou um do caracter ou grupo precedente. Ex:
+dados? irá encontrar tanto "dados" como "dado"
+
+# Porém caso você precise encontrar o ponto de interrogação em
+sí, por se tratar de um metacaracter você deve escapar ele \?
+
+# Vamos pensar nas frases abaixo
+5 arquivos baixados
+1 arquivo baixado
+3 arquivos baixados
+
+arquivos? baixados?
+
+# Espaço em branco
+# Em diversos cenários onde você está lidando com entrada de
+dados de usuário, ou em qualquer aplicação usada no mundo real,
+você terá que lidar com espaço em suas aplicações, isso porque o
+espaço em branco nos ajuda a deixar textos mais legíveis e nos 
+ajuda separar uma palavra da outra, porém se não tiver ciente deste 
+espaço em branco em sua espressões regulares, elas podem
+simplesmente não funcionar.
+    joao
+
+* espaço
+* tab(\t)
+* nova linha (\n)
+* botao enter (\r)
+* Para lidar com qualquer tipo de espaço em branco (\s)
+1. olá
+2.  olá
+3.      olá
+4.olá
+
+Declarando início e fim
+# Para que você crie um regex o mais preciso possível, podemos usar os
+delimitadores de início e fim do que deve ser encontrado
+# O que é possível através dos ^(chapelzinho) e $(cifrão do dolar)
+Hora de codar
+Tá na hora de codar
+Já chegou a hora de codar
+
+Capturando grupos
+# Qualquer padrao encontrado dentro desses parenteses serão colocados em um grupo
+que poderá ser utilizado posteriormente, isso pode ser útil para extrair numeros
+de telefones ou e-mails por exemplo.
+
+imagem_s121fa.jpg (^imagem.+\.$)
+imagem_FFDD.jpg (imagem.+\.)(jpg)
+relatorio_agosto.pdf
+
+# Capturar um sub-grupo ((imagem.+\.)(jpg))
+
+amanda@hotmail.com
+jeff@outlook.com
+carol@gmail.com.br
+
+(\w+)(@\w+\.)(com\.br|com)
+
+(33)99200-1885
+([(]\d\d[)])
+([(]\d{2}[)])(\d{5})([-]\d{4})
+(([(]\d{2}[)])(\d{5})([-]\d{4}))
