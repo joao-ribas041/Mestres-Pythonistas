@@ -17,7 +17,7 @@ def baixar_arquivos():
     print('Arquivos baixados')
     
 nova_thread = threading.Thread(
-    target=extrair_dados_do_site, args=('https:www.devaprender.com',),daemon=True)
+    target=extrair_dados_do_site, args=('https:www.google.com',),daemon=True)
 nova_thread.start()
 baixar_arquivos()
 nova_thread.join()
