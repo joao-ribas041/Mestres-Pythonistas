@@ -1,9 +1,7 @@
 import webbrowser
 import threading
 import time
-import random
-
-def comentar(site, comentario):
+""" def comentar(site, comentario):
     print(f'Entrando no site: {site}')
     print(f'Deixando um comentario: {comentario}')
     time.sleep(5)
@@ -21,5 +19,30 @@ for thread in threads:
     
 for thread in threads:
     thread.join()
-    print(f'Finalizadno {thread.name}')
+    print(f'Finalizadno {thread.name}') """
     
+    
+# Desafio 2
+print('\n'*4)
+import random
+
+def extrair_produtos(site, produto):
+    print(f'\nNavegando ate {site}')
+    # time.sleep(2)
+    print(f'Extraindo produto: {produto}')
+    
+site = 'www.mercadolivre.com'
+produtos = ['celular','monitor','fone de ouvido', 'auto-falante','computador']
+threads = []
+
+for i in range(1,6):
+    threads.append(threading.Thread(target=extrair_produtos,args=(site, random.choice(produtos)),daemon=True))
+
+for thread in threads:
+    thread.start()
+    time.sleep(1)
+    
+for thread in threads:
+    thread.join()
+    
+
