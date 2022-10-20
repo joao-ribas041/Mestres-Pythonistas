@@ -22,3 +22,4 @@ for thread in threads:
 for thread in threads:
     thread.join()
     print(f'Finalizadno {thread.name}')
+    
