@@ -1,4 +1,7 @@
 *.txt
 *.pyc
-/.vscode
-treinamento\9 - Processamento de dados\app88 - Instalador\build
+venv
+.metadata
+
+.vscode/
+treinamento/9 - Processamento de dados/app88 - Instalador/build
